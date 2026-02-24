@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 2</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    body.loaded {
+        opacity: 1;
+    }
+
+    .container {
+        max-width: 700px;
+        text-align: center;
+        padding: 30px;
+        animation: slideUp 1s ease forwards;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .btn-group {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        background-color: #ff6b81;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ff4757;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <p>After that realization, I started noticing small things.</p>
+    <p>The way your voice lifts my mood.</p>
+    <p>The way your smile stays in my mind even after our conversations end.</p>
+    <p>How even a simple message from you can change my whole day.</p>
+    <p>I didn’t plan to feel this way.</p>
+    <p>It happened slowly, naturally, and honestly.</p>
+    <p>And the more I tried to ignore it,</p>
+    <p><strong>the more I understood it was real.</strong></p>
+
+    <div class="btn-group">
+        <button class="btn" onclick="navigate('page1.html')">⬅ Previous</button>
+        <button class="btn" onclick="navigate('page3.html')">Next ➜</button>
+    </div>
+</div>
+
+<script>
+    window.addEventListener("load", function() {
+        document.body.classList.add("loaded");
+    });
+
+    function navigate(page) {
+        document.body.classList.remove("loaded");
+        setTimeout(function() {
+            window.location.href = page;
+        }, 800);
+    }
+</script>
+
+</body>
+</html>
